@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ElevenNote.Models.CategoryListItem>
+
+@{
+    ViewBag.Title = "Categories Home";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryEventType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryEventType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryOwner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }) |
+            @Html.ActionLink("Notes", "NotesOfCategory", new { id = item.CategoryId })
+        </td>
+    </tr>
+}
+
+</table>

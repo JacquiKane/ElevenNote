@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron centerImg">
+        <h1>ElevenNote Note Taking</h1>
+        <p class="lead">ElevenNote is a note taking application built to organize your notes and memories.</p>
+
+        <img src="~/Assets/notetaking.jpg" />
+        <p>
+            @Html.ActionLink("Your Notes Are Ready For You To Check!",
+                                        "Index", "Note",
+                                        null,
+                                        new { @class = "btn btn-primary btn-large" })
+
+        </p>
+    </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Create an ElevenNote</h2>
+        <p>
+            ElevenNote gives you the ability to group your notes together, under categories that make sense.
+        </p>
+        @Html.ActionLink("Create Notes",
+                                    "Create", "Note",
+                                    null,
+                                    new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="col-md-4">
+        <h2>Create an ElevenNote Category</h2>
+        <p>You can categorize and organize your notes into groups that make sense, because you created these groups.</p>
+        <p>
+            @Html.ActionLink("Check Categories",
+                                        "Index", "Category",
+                                        null,
+                                        new { @class = "btn btn-primary btn-large" })
+</div>
+    <div class="col-md-4">
+        <h2>Extras</h2>
+        <p>You can customize and regroup, depending on your needs.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

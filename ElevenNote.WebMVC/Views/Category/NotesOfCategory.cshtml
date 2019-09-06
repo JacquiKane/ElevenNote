@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ElevenNote.Models.NoteListItem>
+
+@{
+    ViewBag.Title = "The Notes of this Category";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="descriptions">
+    <h3>This category description : @ViewBag.CategoryDesc</h3>
+</div>
+<p>
+    All of the notes associated with this category
+</p>
+<table class="table">
+    <tr>
+ 
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+
+    </tr>
+}
+
+</table>
