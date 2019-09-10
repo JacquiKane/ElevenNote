@@ -13,6 +13,10 @@ using ElevenNote.Data;
 
 namespace ElevenNote.WebMVC.Controllers
 {
+#if !DEBUG
+     [RequireHttps]
+
+#endif
     [Authorize]
     public class AccountController : Controller
     {
@@ -66,7 +70,7 @@ namespace ElevenNote.WebMVC.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
